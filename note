@@ -1,0 +1,16 @@
+git remote remove origin git@github.com:RanitaLAYEK/test.git
+ git remote add origin git@github.com:RanitaLAYEK/test.git
+
+ git add filename
+
+ git commit -m "first"
+
+ git push
+
+ git pu
+
+ git pull
+
+
+
+ git commit -m "first"
