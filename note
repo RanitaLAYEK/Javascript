@@ -14,3 +14,5 @@ git remote remove origin git@github.com:RanitaLAYEK/test.git
 
 
  git commit -m "first"
+
+ git checkout -b branch1
