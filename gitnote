@@ -1,0 +1,215 @@
+You clone the Git repository as a working copy.
+
+You modify the working copy by adding/editing files.
+
+If necessary, you also update the working copy by taking other developer's changes.
+
+You review the changes before commit.
+
+You commit changes. If everything is fine, then you push the changes to the repository.
+
+After committing, if you realize something is wrong, then you correct the last commit and push the changes to the repository.
+
+Generate Public/Private RSA Key Pair
+------------------------------------
+[tom@CentOS ~]$ ssh-keygen
+[tom@CentOS ~]$ pwd
+/home/tom
+
+[tom@CentOS ~]$ mkdir tom_repo
+
+[tom@CentOS ~]$ cd tom_repo/
+
+[tom@CentOS tom_repo]$ git init
+Initialized empty Git repository in /home/tom/tom_repo/.git/
+
+[tom@CentOS tom_repo]$ git add .
+
+[tom@CentOS tom_repo]$ git status -s
+A README
+
+[tom@CentOS tom_repo]$ git commit -m 'Initial commit'
+
+[tom@CentOS tom_repo]$ git log
+
+[tom@CentOS tom_repo]$ git remote add origin gituser@git.server.com:project.git
+
+[tom@CentOS tom_repo]$ git push origin master
+
+CLONE 
+=============
+
+[jerry@CentOS ~]$ mkdir jerry_repo
+
+[jerry@CentOS ~]$ cd jerry_repo/
+
+[jerry@CentOS jerry_repo]$ git clone gituser@git.server.com:project.git
+
+Git add operation adds file to the staging area.
+==================================================
+[jerry@CentOS project]$ git status -s
+?? string
+?? string.c
+
+[jerry@CentOS project]$ git add string.c
+
+[jerry@CentOS project]$ git status -s
+A string.c
+?? string
+
+[jerry@CentOS project]$ git commit -m 'Implemented my_strlen function'
+
+Jerry uses the git show command to view the commit details. The git show command takes SHA-1 commit ID as a parameter.
+
+[jerry@CentOS project]$ git show cbe1249b140dad24b2c35b15cc7e26a6f02d2277
+
+[jerry@CentOS project]$ git diff
+[jerry@CentOS project]$ git stash list
+stash@{0}: WIP on master: e86f062 Added my_strcpy function
+[jerry@CentOS project]$ git status -s
+?? string
+
+[jerry@CentOS project]$ git stash pop
+
+[jerry@CentOS project]$ git status -s
+M string.c
+?? string
+
+[tom@CentOS project]$ pwd
+/home/tom/project
+
+[tom@CentOS project]$ ls
+README string string.c
+
+[tom@CentOS project]$ mkdir src
+
+[tom@CentOS project]$ git mv string.c src/
+
+[tom@CentOS project]$ git status -s
+R string.c −> src/string.c
+?? string
+
+[tom@CentOS project]$ git commit -m "Modified directory structure"
+[jerry@CentOS project]$ pwd
+/home/jerry/jerry_repo/project
+
+[jerry@CentOS project]$ ls
+README string string.c
+
+[jerry@CentOS project]$ git pull
+
+RENAME:
+=============
+[jerry@CentOS project]$ pwd
+/home/jerry/jerry_repo/project
+
+[jerry@CentOS project]$ ls
+README src
+
+[jerry@CentOS project]$ cd src/
+
+[jerry@CentOS src]$ git add Makefile
+
+[jerry@CentOS src]$ git mv string.c string_operations.c
+
+[jerry@CentOS src]$ git status -s
+A Makefile
+R string.c −> string_operations.c
+
+DELETE
+=======
+[tom@CentOS src]$ pwd
+/home/tom/project/src
+
+[tom@CentOS src]$ ls
+Makefile string_operations string_operations.c
+
+[tom@CentOS src]$ file string_operations
+string_operations: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses
+shared libs), for GNU/Linux 2.6.18, not stripped
+
+[tom@CentOS src]$ git log
+commit 29af9d45947dc044e33d69b9141d8d2dad37cc62
+
+[tom@CentOS src]$ ls
+Makefile string_operations string_operations.c
+
+[tom@CentOS src]$ git rm string_operations
+rm 'src/string_operations'
+
+[tom@CentOS src]$ git commit -a -m "Removed executable binary"
+
+[master 5776472] Removed executable binary
+
+[tom@CentOS src]$ git push origin master
+
+Revert Uncommitted Changes
+==========================
+[jerry@CentOS src]$ pwd
+/home/jerry/jerry_repo/project/src
+
+[jerry@CentOS src]$ git status -s
+M string_operations.c
+
+[jerry@CentOS src]$ git checkout string_operations.c
+
+[jerry@CentOS src]$ git status –s
+[tom@CentOS src]$ pwd
+/home/tom/top_repo/project/src
+
+[tom@CentOS src]$ ls -1
+Makefile
+string_operations.c
+
+[tom@CentOS src]$ rm string_operations.c
+
+[tom@CentOS src]$ ls -1
+Makefile
+
+[tom@CentOS src]$ git status -s
+D string_operations.c
+
+Git is showing the letter D before the filename. This indicates that the file has been deleted from the local repository.
+
+[tom@CentOS src]$ git checkout string_operations.c
+
+[tom@CentOS src]$ ls -1
+Makefile
+string_operations.c
+
+[tom@CentOS src]$ git status -s
+
+tom@CentOS src]$ pwd
+/home/tom/top_repo/project/src
+# Unmodified file
+
+[tom@CentOS src]$ git status -s
+
+# Modify file and view it’s status.
+[tom@CentOS src]$ git status -s
+M string_operations.c
+
+[tom@CentOS src]$ git add string_operations.c
+Git status shows that the file is present in the staging area, now revert it by using the git checkout command and view the status of the reverted file.
+
+[tom@CentOS src]$ git checkout HEAD -- string_operations.c
+
+[tom@CentOS src]$ git status -s
+
+.git/refs/heads/master file stores the commit ID of the HEAD pointer. We can verify it by using the git log -1 command.
+
+[jerry@CentOS project]$ cat .git/refs/heads/master
+577647211ed44fe2ae479427a0668a4f12ed71a1
+
+[jerry@CentOS project]$ git log -2
+[jerry@CentOS project]$ git reset --soft HEAD~
+jerry@CentOS project]$ git log -2
+
+[jerry@CentOS src]$ head -2 string_operations.c
+[jerry@CentOS src]$ git reset --hard 577647211ed44fe2ae479427a0668a4f12ed71a1
+
+HEAD is now at 5776472 Removed executable binary
+
+
+
+
