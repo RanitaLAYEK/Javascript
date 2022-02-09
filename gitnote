@@ -210,6 +210,32 @@ jerry@CentOS project]$ git log -2
 
 HEAD is now at 5776472 Removed executable binary
 
+TAG 
+==========
+tom@CentOS project]$ pwd
+/home/tom/top_repo/project
+
+[tom@CentOS project]$ git tag -a 'Release_1_0' -m 'Tagged basic string operation code' HEAD
+If you want to tag a particular commit, then use the appropriate COMMIT ID instead of the HEAD
+[tom@CentOS project]$git push origin tag Release_1_0
+[jerry@CentOS src]$ git show Release_1_0
+[tom@CentOS project]$ git tag -d Release_1_0(for delete)
+
+PATCH
+======
+[tom@CentOS src]$ pwd
+/home/tom/top_repo/project/src
+
+[tom@CentOS src]$ git diff
+
+[tom@CentOS src]$ git status –s
+
+[tom@CentOS src]$ git apply 0001-Added-my_strcat-function.patch
+
+[tom@CentOS src]$ git status -s
+
+
+
 
 
 
