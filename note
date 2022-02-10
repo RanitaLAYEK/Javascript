@@ -11,8 +11,18 @@ git remote remove origin git@github.com:RanitaLAYEK/test.git
 
  git pull
 
-
-
- git commit -m "first"
+git commit -m "first"
 
  git checkout -b branch1
+TYPE CONVERSTION
+==================
+converstion one type to another
+TYPE COERCION
+=======================
+when developer deal with 2 values ,then javascipt convert it into other values.
+
+5 FALSY values
+=================
+0.'',undefined,null,Nan
+
+ 
