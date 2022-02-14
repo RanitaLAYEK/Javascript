@@ -126,3 +126,49 @@ console.log(Boolean('qatar'));
 console.log(Boolean({}));
 
 //Equality operator == & ===
+
+const rAge=20;
+if(rAge===20)console.log('you are an adult');
+
+// const fav=prompt('whats your lucky number');
+// console.log(fav);
+
+/*if(fav==25){ //'25'==25 its same value here ignoring type of the value ,here string & number. 
+  console.log('cool! 25 is amazing');
+}
+
+const nFav=prompt('please say the number');
+if (nFav===23){
+  console.log('OMG');
+}
+else if(nFav===7) {
+  console.log('turn over');
+}
+else if(nFav==56) {
+  console.log('he he');
+}
+else{
+  console.log('BOOM!')
+}*/
+
+const hasDriverLicense=true;
+const hasGoodVision=false;
+
+console.log(hasDriverLicense && hasGoodVision );
+console.log(hasDriverLicense || hasGoodVision );
+
+const shouldDrive= hasDriverLicense && hasGoodVision;
+
+if(shouldDrive){
+  console.log('sarah is able to drive');
+}else{
+  console.log('someone should drive....');
+}
+
+const isTired=true;
+console.log(hasDriverLicense||hasGoodVision & isTired);
+if(hasDriverLicense||hasGoodVision & isTired){
+  console.log('sarah is able to drive..');
+}else{
+  console.log('someone should drive....');
+}

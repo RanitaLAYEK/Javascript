@@ -23,6 +23,8 @@ when developer deal with 2 values ,then javascipt convert it into other values.
 
 5 FALSY values
 =================
-0.'',undefined,null,Nan
+0.'',undefined,null,Nan.
+
+
 
  
