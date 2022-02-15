@@ -172,3 +172,28 @@ if(hasDriverLicense||hasGoodVision & isTired){
 }else{
   console.log('someone should drive....');
 }
+
+const day1='Friday';
+switch(day1){ //day1===monday
+  case 'Monday':
+  console.log('Plan for entire day');
+  break;
+  case 'Tuesday':
+  console.log('started');
+  break;
+  case 'Wednesday':
+  console.log('A happy day');
+  break;
+  case 'Thursday':
+  console.log('Feeling Good');
+  break;
+  case 'Friday':
+  console.log('Happy weekend');
+  break;
+  default:
+console.log('Not a valid date');
+}
+
+const age1=18;
+age1>=18?console.log('I like to drink taquila'):console.log('I like to drink water');
+//========If condition ====else is mandatory=====else==================================
