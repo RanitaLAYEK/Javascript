@@ -194,6 +194,16 @@ switch(day1){ //day1===monday
 console.log('Not a valid date');
 }
 
-const age1=18;
+//Ternary Operator
+const age1=3;
 age1>=18?console.log('I like to drink taquila'):console.log('I like to drink water');
 //========If condition ====else is mandatory=====else==================================
+
+let drink2;
+if (age1>=18){
+  drink2='wine';
+}else{
+  drink2='water';
+}
+console.log(`i like to drink ${drink2} `);
+
