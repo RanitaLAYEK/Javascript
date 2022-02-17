@@ -34,9 +34,20 @@ const nameKey='Name';
 console.log(ray['first'+nameKey]);
 console.log(ray['last'+nameKey]);
 
-const interestedIn = prompt('choose betn above one option.job');
+var xy=prompt('choose in betn above one option. firstName,lastName & job');
 //console.log(ray.interestedIn); -o/p --undefined.dot notaion
-console.log(ray['interestedIn']);
+console.log(ray[xy]);
+
+if (ray[xy]){
+    console.log(ray[xy])
+}
+else{
+    console.log('wrong request');
+}
+
+ray.location='paris';
+ray['email']='rayemail.com';
+console.log(ray);
 
 
 
