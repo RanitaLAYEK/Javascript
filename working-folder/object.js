@@ -34,9 +34,9 @@ const nameKey='Name';
 console.log(ray['first'+nameKey]);
 console.log(ray['last'+nameKey]);
 
-var xy=prompt('choose in betn above one option. firstName,lastName & job');
+/*var xy=prompt('choose in betn above one option. firstName,lastName & job');
 //console.log(ray.interestedIn); -o/p --undefined.dot notaion
-console.log(ray[xy]);
+//console.log(ray[xy]);
 
 if (ray[xy]){
     console.log(ray[xy])
@@ -44,10 +44,34 @@ if (ray[xy]){
 else{
     console.log('wrong request');
 }
-
+*/
 ray.location='paris';
 ray['email']='rayemail.com';
 console.log(ray);
 
+const emly={
+    fName:'Ray',
+    lName:'roy',
+    birthYear:2020,
+    job:'officer',
+    payment:[20,30,40],
+    hasDrivencar:true,
 
+    calcAge:function(birthYear){
+ return 2037-birthYear;
+    }
+};
+
+const calcAge =function(birthYear) {
+    return 2037-birthYear;
+}
+
+console.log(emly.calcAge(1990));
+
+
+
+/*calcAge : function() {
+    console.log(this);
+    return 2037-this.birthYear;
+}*/
 
