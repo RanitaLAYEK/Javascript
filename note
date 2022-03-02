@@ -29,6 +29,9 @@ https://github.com/jonasschmedtmann/complete-javascript-course
 
 esc event handling
 ==================
-
+EVENT HANDLING==keyup,keydown,keypress
+keyup=lift your finger up in the keyboard.
+keydown=lift your finger down in the keyboard.
+keypress=pressing certain key.
 
  
