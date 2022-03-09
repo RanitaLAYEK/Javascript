@@ -24,6 +24,32 @@ const ray={
     payment:[20,30,40]
 }
 
+const resturants={
+    name:"Avani sharma",
+    location:'Delhi-chennai',
+    categories:['organic','vegetarian'],
+    starterMenu:['pizza','garlic bread','capacino'],
+    mainMenu:['chicken curry','alur dum'],
+    openingHours:{
+      mon:{  
+        open:10,
+        close:22,
+      },
+      tue:{
+        open:9,
+        close:4,
+      },
+      fri:{
+       open:7,
+       close:8,
+      }
+    }
+}
+
+const {name,starterMenu,openingHours}=resturants;
+
+
+
 console.log(ray);
 console.log(ray.lastName);//dot notation
 console.log(ray['lastName']);//Bracket notation
