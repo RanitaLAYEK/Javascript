@@ -18,4 +18,7 @@ const restaurant = {
     }
 }
 
-const ingredients=[prompt(`lets make pasta ingredient 1`)];
+const ingredients=[prompt(`lets make pasta ingredient 1`),prompt(`lets make pasta ingredient 2`),prompt(`lets make pasta ingredient 3`)]
+
+console.log(ingredients);
+restaurant.orderPasta(...ingredients);
