@@ -24,19 +24,57 @@ const resturants = {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     }
 ,
-    orderDelivery:function(obj){
-        console.log(obj);
+    orderDelivery:function({starterIndex=1,mainIndex=0,address,time='20:00'}){
+        console.log(`order food received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} on ${time}`);//call a function
       }
 }
 
-resturants.orderDelivery({
+const arr=[7,8,9];
+const badNewArr=[1,2,arr[0],arr[1],arr[2]];
+console.log(badNewArr);
+
+//spraed operators
+
+const arr1=[3,4,...arr];
+console.log(arr1);
+
+console.log(...arr1);
+
+const newMenu=[...resturants.mainMenu,'pasta']
+console.log(newMenu);
+
+//copy Array
+
+const mainMenuCopy=[...resturants.mainMenu];
+
+//join 2 array
+
+const menu=[...resturants.mainMenu,...resturants.starterMenu];
+console.log(menu);
+
+//iterals are strings,array,maps or sets not objects
+
+const str='resham';
+const letters=[...str,'','reh'];
+console.log(letters);
+console.log(...str);
+//console.log(`${...str} arra`);====use ,
+
+
+
+
+/*resturants.orderDelivery({
     time:'22.30',
-    address:'mia amore',
+    address:'mia amore',//passing an object
     mainIndex:2,
     starterIndex:2,
 })
 
-
+restuarants.orderDelivery({
+    address:'mia amore',
+    starterIndex:1,
+})
+*/
 /*const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -113,7 +151,7 @@ const resturant={
       addre:'swf',
   })
 
-  orderDelivery();*/
+  orderDelivery();
 
 const {name,starterMenu,openingHours}=resturant;
 console.log(name,starterMenu,openingHours);
@@ -126,6 +164,7 @@ console.log(urname,oHours,sMenu);
 const {menu=[],starterMenu:s1Menu=[]}=resturant;
 console.log(menu,sMenu);
 
+
 //Mutating variable
 let a1=10;
 let b=20;
@@ -134,5 +173,8 @@ const obj={a1:20,b:25,c:30}
 ({a1,b}=obj);
 console.log(a1,b);
 
-const {fri:{open,close}}=openingHours;
+
+let {fri:{open,close}}=openingHours;
 console.log(open,close);
+*/
+
