@@ -36,12 +36,11 @@
         `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
       );
     },
-
-    orderPizza(mainIngredient, ...otherIngredients) {
+    
+orderPizza(mainIngredient, ...otherIngredients) {
         console.log(mainIngredient);
         console.log(otherIngredients);
       },
-  
     }
-  console.log(3||'jonas'),
+  //console.log(3||'jonas'),
 }
