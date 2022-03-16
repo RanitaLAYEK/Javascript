@@ -68,6 +68,31 @@ if(restaurant.openingHours.fri)
 const days=['mon','tues','wed','thus','fri','sat'];
 for(const day of days){
     console.log(day);
-    //resturant.openingHours.day--we cant do this as its not an actual property name
+    //resturant.openingHours.day--we cant do this as its not an actual property name we need to use []in this case
+    //resturant.openingHours[day]
 }
-     
+//property name
+const properties=Object.keys(openingHours);
+console.log(properties);
+let openStr=`we are open on ${properties.length} days:`;
+//console.log(`we are open on ${properties.length} days`);
+for(const day of Object.keys(openingHours)){
+  openStr += `${day} `;
+}
+
+  console.log(openStr);
+
+//property value
+const values=Object.values(openingHours);
+console.log(values);
+
+//entire object
+
+const entries=Object.entries(openingHours);
+//console.log(entries);
+
+//data out of the object
+//key,value
+for(const [key,{open,close}] of entries){
+  console.log(`On ${key} we open at ${open}  and close ${close}`);
+}
