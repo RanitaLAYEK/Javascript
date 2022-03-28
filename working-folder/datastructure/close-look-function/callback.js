@@ -41,4 +41,12 @@ const transformer=function(str,fn){
 transformer('js is good to know',upperFirstWord);
 transformer('JavaScript is the best!', oneWord);
 
+const high5=function(){
+    console.log('highfive');
+}
+document.body.addEventListener('click',high5);
+
+['Jonas', 'Martha', 'Adam'].forEach(high5);
+
+
 
