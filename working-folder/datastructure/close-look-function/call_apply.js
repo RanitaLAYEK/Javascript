@@ -84,7 +84,14 @@ const addTax = (rate, value) => value + value * rate;
 
   //function returning another function example
 
-  
+  const addTaxRate=function(rate){
+      return function(value){
+        return value + value * rate;
+      }
+  }
+  const addVat2=addTaxRate(0.23);
+  console.log(addVat2(100));
+  console.log(addVat2(23));
 
 /*
 let name = {
