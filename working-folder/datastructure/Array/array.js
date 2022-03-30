@@ -36,4 +36,10 @@ const arr3=[22,28,27,10];
 console.log(arr3[2]);
 console.log(arr3.at(0));
 
-//
+//getting last array element
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1));
+console.log(arr.at(-1));
+
+//at in string
+
