@@ -72,7 +72,7 @@ const output5=arr2.reduce(function(acc,current){
     return acc;
 },0),
 
-/*function findMax(arr2){
+function findMax(arr2){
     let max=0;
     for(i=0;i<arr2.length;i++){
     if(arr2[i]>max){
@@ -88,9 +88,9 @@ const output4=arr2.reduce(function(acc,curr){
     if(curr>acc){
         acc=curr;
       }
-},0)*/
+},0)
 
-//========================EXAMPLE=====================================
+
 
 
 
