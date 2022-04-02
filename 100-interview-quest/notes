@@ -5,4 +5,21 @@ live server
 quokka.js
 
 1.what is the difference between const ,let & var?
-Ans.
+Ans. const means constant,
+
+let can change variable at any point(reassigning at any time) & for empty variable declearation.mutable variable
+let a=10;
+a=20;
+o/p-20
+let is block scope.
+
+const cant change variable once its declared.for array we can push or pop the variable.but const change entire variables at once.
+Immutable variable.
+we cant do 
+const a;
+
+var is old way of declearing variable prior ES6.var is function scope,window object
+
+var a=10;
+a=30;
+console.log(a);
