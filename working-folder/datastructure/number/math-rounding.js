@@ -38,3 +38,5 @@ const isEven=n=>(n%2===0);
 console.log(isEven(10));
 console.log(isEven(21));
 console.log(isEven(8));
+
+

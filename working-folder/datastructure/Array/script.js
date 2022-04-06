@@ -62,7 +62,61 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
+
+const displayMovement = function (movements) {
+  containerMovements.innerHTML = '';
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
+    //template literals
+    const html = `<div class="movements__row"> 
+  <div class="movements__type movements__type--${type}">${i + 1}${type}</div>
+  <div class="movements__value">${mov}</div>
+</div>`
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+
+
+    //to add new html line in main page,it accept two string "afterbegin"--Just inside the element, before its first child. thats means write new child element after begining of parent element
+
+  })
+
+}
+
+displayMovement(account1.movements);
+/*console.log(containerMovements.innerHTML);
+ ---o/p  containerMovements.innerHTML
+<div class="movements__row"> 
+  <div class="movements__type movements__type--deposit">8deposit</div>
+  <div class="movements__value">1300</div>
+</div><div class="movements__row"> 
+  <div class="movements__type movements__type--deposit">7deposit</div>
+  <div class="movements__value">70</div>
+</div><div class="movements__row"> 
+  <div class="movements__type movements__type--withdrawal">6withdrawal</div>
+  <div class="movements__value">-130</div>
+</div><div class="movements__row"> 
+  <div class="movements__type movements__type--withdrawal">5withdrawal</div>
+  <div class="movements__value">-650</div>
+</div><div class="movements__row"> 
+  <div class="movements__type movements__type--deposit">4deposit</div>
+  <div class="movements__value">3000</div>
+</div><div class="movements__row"> 
+  <div class="movements__type movements__type--withdrawal">3withdrawal</div>
+  <div class="movements__value">-400</div>
+</div><div class="movements__row"> 
+  <div class="movements__type movements__type--deposit">2deposit</div>
+  <div class="movements__value">450</div>
+</div><div class="movements__row"> 
+  <div class="movements__type movements__type--deposit">1deposit</div>
+  <div class="movements__value">200</div>
+</div>
+*/
+
+const user='Steven Thomas Williams';
+const userName=user.toLowerCase().split(' ');
+console.log(userName);
+
+/////////////////////////////////////////////////const userName=user.toLowerCase().split('')=s', 't', 'e', 'v', 'e', 'n', ' ', 't', 'h', 'o', 'm', 'a', 's', ' ', 'w', 'i', 'l', 'l', 'i', 'a', 'm', 's']
 // LECTURES
 
 const currencies = new Map([
@@ -74,3 +128,27 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+const eurToUsd = 1.1;
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+})
+console.log(movementsUSD);
+
+//using foroff loop
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+//using arrow function
+const movementsUSDarrow = movements.map(mov => mov * eurToUsd);
+console.log(movementsUSDarrow);
+
+const movementDescription=movements.map((mov, i)=> {
+  if (mov > 0) {
+    return(`Movement ${i + 1}:you deposited ${mov}`)
+}
+else {
+  return(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+}
+})
+console.log(movementDescription);

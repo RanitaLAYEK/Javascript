@@ -9,3 +9,6 @@ const output=users.map((x)=>x.firstName +" "+x.lastName+" "+x.age);
 
 console.log(output);
 
+if(x.age>27){
+    
+}
