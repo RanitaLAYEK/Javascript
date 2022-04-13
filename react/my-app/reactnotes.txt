@@ -31,3 +31,72 @@ return (
         </a>
       </header>
     </div>
+    ===============================
+    in index.js added below
+    import App from './components/App';
+    ===================================
+    in index.html added
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    removed manifest stylesheet link
+    ======================================
+    in app.js added below
+    import Header from './header';
+    import React from 'react';
+    import AddContact from './AddContact';
+import ContactList from './ContactList';
+====================================================================
+one or more html element if we want to add we can use ();
+===================================================================
+App.js=>
+return (
+    <div>
+    <header />
+    <AddContact />
+    <ContactList/>
+    </div>
+=====================================================================
+header.js==>
+
+const Header=()=>{//a function expression
+ return (
+   <div className='ui fixed menu'>
+   <div className='ui container center'>
+    <h2>Contact Manager</h2>
+   </div>
+   </div>
+ )
+}
+
+export default Header; we need to export header as we imported the component.
+
+============================================================================
+AddContact.js==>
+create AddContact form components in AddContact
+
+import React from "react";
+
+class AddContact extends React.Component{
+ render(){
+     return (<div className="ui main">
+         <h2>Add Contact</h2>
+         <form className="ui form">
+             <div className="field">
+                 <label>Name</label>
+                 <input type="text" name="name" placeholder="Name" />
+             </div>
+
+             <div className="field">
+                 <label>Email</label>
+                 <input type="text" name="email" placeholder="Email" />
+             </div>
+
+         </form>
+     </div>
+     )
+     
+ }
+}
+
+export default AddContact;
+
+
