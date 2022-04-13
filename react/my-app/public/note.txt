@@ -1,0 +1,1 @@
+we removed 4 files like jpg of react & manifest.json

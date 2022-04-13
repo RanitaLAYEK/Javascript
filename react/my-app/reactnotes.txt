@@ -1,0 +1,33 @@
+From index.js (src) we have 
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));--this is coming from index.html(public) root id
+root.render(   
+  <React.StrictMode>
+    <App /> --in root we are embedded the app component 
+  </React.StrictMode>
+);
+
+==============================
+from app.js removed 
+import logo from './logo.svg';
+return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
