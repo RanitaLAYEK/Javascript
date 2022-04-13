@@ -89,7 +89,7 @@ class AddContact extends React.Component{
                  <label>Email</label>
                  <input type="text" name="email" placeholder="Email" />
              </div>
-
+            <button className="ui button blue">Add</button>
          </form>
      </div>
      )
@@ -98,5 +98,13 @@ class AddContact extends React.Component{
 }
 
 export default AddContact;
+=================================================================================
+ContactList.js==>
 
+import React from 'react';
 
+const ContactList=()=>{
+
+}
+
+export default ContactList;
