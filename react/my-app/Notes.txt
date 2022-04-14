@@ -1,5 +1,25 @@
 1)what is components?
 Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. Components come in two types, Class components and Function components.
 class AddContact extends React.Component{
+    render(){
+        return ()
+    }
  //this is a class component
 }
+RENDER METHOD DECLARATION
+
+//ACCESS PROPS
+PASS DATA FROM PARENTS TO CHILD===PROS*****
+
+REFERENCE VARIABLE IN JSX
+
+ADDING INLINE STYLE.
+
+ADD IMAGE IN React
+
+USESTATE REACT HOOK
+STATE IN CLASS COMPONENT
+FUNCTION AS PROPS.
+UPDATE STATE WITH SETSTATE
+USEEFFECT REACT HOOK
+
